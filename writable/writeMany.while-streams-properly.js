@@ -6,7 +6,7 @@ const fs = require("fs/promises");
 (async () => {
   const fileHandler = await fs.open("text.txt", "w");
   const writeStream = fileHandler.createWriteStream();
-  let i = 100000000;
+  let i = 100000000 // one million times;
 
   console.time("write many");
   write();

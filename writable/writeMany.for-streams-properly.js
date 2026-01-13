@@ -1,3 +1,5 @@
+// Don't use this method with readBig.js because it will not work properly. Instead, use writeMany.while-streams-properly.js.
+
 const fs = require("fs/promises");
 const { Buffer } = require("buffer");
 
