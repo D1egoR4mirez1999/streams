@@ -1,2 +1,5 @@
 readable/text-gigantic.txt
 readable/text.txt
+writable/text.txt
+readable/text-gigantic-copy.txt
+readable/text-small.txt

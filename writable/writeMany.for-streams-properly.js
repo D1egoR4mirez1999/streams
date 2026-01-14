@@ -9,7 +9,7 @@ const { Buffer } = require("buffer");
 (async () => {
   const fileHandler = await fs.open("text.txt", "w");
   const writeStream = fileHandler.createWriteStream();
-  const oneMillionTimes = 1000000;
+  const oneMillionTimes = 1000000; // one million times;
   let idx = 0;
 
   writeStream.on("finish", () => {

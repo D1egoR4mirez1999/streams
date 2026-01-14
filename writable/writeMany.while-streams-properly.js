@@ -1,12 +1,17 @@
 const fs = require("fs/promises");
 
-// Execution time: 3.5s
+// Execution time: 7:38.880 (m:ss.mmm) with one hundred million times;
+// Execution time: 2.730s with one million times;
 // Memory usage: 40MB
-// CPU: 5%
+// CPU: 6.6%
+// one hundred million times;
+const oneHundredMillionTimes = 100000000 // one hundred million times;
+const oneMillionTimes = 1000000; // one million times;
+
 (async () => {
   const fileHandler = await fs.open("text.txt", "w");
   const writeStream = fileHandler.createWriteStream();
-  let i = 100000000 // one million times;
+  let i = oneMillionTimes; 
 
   console.time("write many");
   write();
