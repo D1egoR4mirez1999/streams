@@ -2,8 +2,8 @@ const { Writable } = require("node:stream");
 const fs = require("node:fs");
 
 class FsWritable extends Writable {
-  constructor({ fileName, highWaterMark }) {
-    super({ highWaterMark });
+  constructor({ fileName }) {
+    super();
     this.fileName = fileName;
     this.fd = null;
 
