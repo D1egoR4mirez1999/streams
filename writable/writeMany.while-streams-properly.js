@@ -4,7 +4,6 @@ const fs = require("fs/promises");
 // Execution time: 2.730s with one million times;
 // Memory usage: 40MB
 // CPU: 6.6%
-// one hundred million times;
 const oneHundredMillionTimes = 100000000 // one hundred million times;
 const oneMillionTimes = 1000000; // one million times;
 
