@@ -33,7 +33,7 @@ class MultiFileWriter extends Writable {
         return callback(error);
       }
 
-      
+
       // Ejemplo de cómo funciona este código:
       // Supón que this.fileHandlers.length es 3 (hay 3 archivos).
       // Si this.currentFileIndex comienza en 0:
@@ -48,12 +48,10 @@ class MultiFileWriter extends Writable {
   }
 
   async _final(callback) {
-    console.log("final");
-
     for (const fileHandler of this.fileHandlers) {
       await fileHandler.close();
     }
-    
+
     callback(null);
   }
 
@@ -61,8 +59,6 @@ class MultiFileWriter extends Writable {
     for (const fileHandler of this.fileHandlers) {
       await fileHandler.close();
     }
-
-    console.log("destroy");
 
     callback(error);
   }
