@@ -23,6 +23,7 @@ class FsReadStream extends Readable {
 
   _read(size) {
     const buffer = Buffer.alloc(size);
+    
     fs.read(this.fd, buffer, 0, size, null, (err, bytesRead) => {
       if (err) {
         return this.destroy(err);

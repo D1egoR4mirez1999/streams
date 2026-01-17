@@ -51,6 +51,7 @@ class FsWritable extends Writable {
       }
 
       this.chunks = [];
+      this.chunksSize = 0;
       this.writes++;
       callback();
     });
