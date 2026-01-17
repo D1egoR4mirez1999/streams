@@ -23,7 +23,6 @@ class MultiFileWriter extends Writable {
     }
   }
 
-
   _write(chunk, encoding, callback) {
     const currentHandler = this.fileHandlers[this.currentFileIndex];
     const writeStream = currentHandler.createWriteStream();
@@ -32,7 +31,6 @@ class MultiFileWriter extends Writable {
       if (error) {
         return callback(error);
       }
-
 
       // Ejemplo de cómo funciona este código:
       // Supón que this.fileHandlers.length es 3 (hay 3 archivos).
