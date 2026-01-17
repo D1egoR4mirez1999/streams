@@ -1,12 +1,15 @@
 const fs = require("fs/promises");
 
+// Execution time: 2:26.046 (m:ss.mmm)
+// Memory usage: 45MB
 (async () => {
   const fileHandlerRead = await fs.open("text-gigantic.txt", "r");
   const fileHandlerWrite = await fs.open("text.txt", "w");
 
   const streamRead = fileHandlerRead.createReadStream();
   const streamWrite = fileHandlerWrite.createWriteStream();
-  let split = "";
+
+  let buffer = ""; // buffer to store the numbers that are not in the correct order
 
   console.time("read big file");
 
@@ -17,23 +20,10 @@ const fs = require("fs/promises");
   });
 
   streamRead.on("data", (chunk) => {
-    let numbers = chunk.toString().split("  ");
+    const data = buffer + chunk.toString();
+    const numbers = data.split("  ");
 
-    const firstNumber = Number(numbers[0]);
-    const secondNumber = Number(numbers[1]);
-
-    const beforeLastOneNumber = Number(numbers[numbers.length - 2]);
-    const lastOneNumber = Number(numbers[numbers.length - 1]);
-
-    if (firstNumber !== secondNumber + 1) {
-      if (split) {
-        numbers[0] = split.trim() + numbers[0].trim();
-      }
-    }
-
-    if (beforeLastOneNumber - 1 !== lastOneNumber) {
-      split = numbers.pop();
-    }
+    buffer = numbers.pop();
 
     numbers.forEach((number) => {
       const n = Number(number);
