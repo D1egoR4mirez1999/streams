@@ -2,7 +2,6 @@ const { Transform, pipeline } = require("node:stream");
 const fs = require("node:fs/promises");
 
 class EncryptionStream extends Transform {
-
   constructor(fileSize) {
     super();
 
@@ -10,7 +9,6 @@ class EncryptionStream extends Transform {
     this.currentSize = 0;
     this.nextLog = 0.1;
   }
-
 
   _transform(chunk, encoding, callback) {
     this.currentSize += chunk.length;
