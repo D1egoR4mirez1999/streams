@@ -16,3 +16,5 @@ custom-streams/encryption/decrypted_data.txt
 custom-streams/encryption/encrypted_data.txt
 custom-streams/encryption/source.txt
 GUIA_MEJORA_STREAMS.md
+custom-streams/readable/text-w.txt
+custom-streams/readable/text.txt
